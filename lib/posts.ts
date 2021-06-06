@@ -17,13 +17,15 @@ export function getSortedPostsData() {
         const fullPath = path.join(postsDirectory, fileName)
         const fileContents = fs.readFileSync(fullPath, 'utf8')
 
-        // User gray-matter to parse the post metadata section
-        const matterResult = matter(fileContents)
+        // User gray-matter to parse the post metadata section & create excerpt
+        const matterResult = matter(fileContents, { excerpt_separator: '<!-- excerpt -->'})
+        const excerpt = matterResult.excerpt;
 
         // Combine the data with the id
         return {
             id,
-            ...(matterResult.data as { date: string, title: string })
+            excerpt,
+            ...(matterResult.data as { date: string, title: string, coverImage: string }),
         }
     })
     // Sort posts by date
