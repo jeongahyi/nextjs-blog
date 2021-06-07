@@ -4,15 +4,16 @@ import Image from 'next/image'
 
 export default function CoverImage({ title, src, id, height, width }) {
     const image = (
-        <Image 
+        <Image
+            priority 
             src={src}
-            alt={`Cover Image for ${title}`}
             className={cn('shadow-sm', {
                 'hover:shadow-md transition-shadow duration-200': id,
             })}
             layout="responsive"
-            width={width}
             height={height}
+            width={width}
+            alt={`Cover Image for ${title}`}
         />
     )
     return (

@@ -1,6 +1,6 @@
 import Layout from '../components/layout'
 
-export default () => {
+export default function Error() {
     return (
         <Layout>
             <h1>Oops! Page Not Found!</h1>
