@@ -21,7 +21,7 @@ export default function Home({ allPostsData }: {
 }) {
   const heroPost = allPostsData[0];
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>{SITE_TITLE}</title>
       </Head>
