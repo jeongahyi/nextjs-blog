@@ -1,12 +1,9 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import DateFormatter from '../components/date-formatter'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Intro from '../components/intro'
 import HeroPost from '../components/hero-post'
 import MoreStories from '../components/more-stories'
-import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import { GetStaticProps } from 'next'
 import { SITE_TITLE } from '../lib/constants'
@@ -38,23 +35,6 @@ export default function Home({ allPostsData }: {
             excerpt={heroPost.excerpt}
           />
         )}
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h2 className={utilStyles.headingLg}>Blog</h2>
-          <ul className={utilStyles.list}>
-            {allPostsData.map(({ id, date, title }) => (
-              <li className={utilStyles.listItem} key={id}>
-                <Link href={`/posts/${id}`}>
-                  <a>{title}</a>
-                </Link>
-                <br />
-                <small className={utilStyles.lightText}>
-                  <DateFormatter dateString={date} />
-                </small>
-              </li>
-            ))
-            }
-          </ul>
-        </section>
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
     </Layout>
