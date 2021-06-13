@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import Container from '../components/container'
 import Intro from '../components/intro'
 import HeroPost from '../components/hero-post'
+import MoreStories from '../components/more-stories'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import { GetStaticProps } from 'next'
@@ -19,7 +20,8 @@ export default function Home({ allPostsData }: {
     excerpt: string
   }[]
 }) {
-  const heroPost = allPostsData[0];
+  const heroPost = allPostsData[0]
+  const morePosts = allPostsData
   return (
     <Layout>
       <Head>
@@ -53,6 +55,7 @@ export default function Home({ allPostsData }: {
             }
           </ul>
         </section>
+        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
     </Layout>
   )
