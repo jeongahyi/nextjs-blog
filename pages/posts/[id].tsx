@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
-import DateFormatter from '../../components/date-formatter'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Container from '../../components/container'
@@ -12,7 +11,7 @@ export default function Post({ postData }: {
         title: string
         coverImage: string
         id: string
-        date: string
+        createdDate: string
         author: string
         contentHtml: string
     }
@@ -28,7 +27,7 @@ export default function Post({ postData }: {
                         title={postData.title}
                         coverImage={postData.coverImage}
                         id={postData.id}
-                        date={postData.date}
+                        date={postData.createdDate}
                         author={postData.author}
                     />
                     <PostBody content={postData.contentHtml} />

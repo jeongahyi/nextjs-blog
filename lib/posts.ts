@@ -25,11 +25,11 @@ export function getSortedPostsData() {
         return {
             id,
             excerpt,
-            ...(matterResult.data as { date: string, title: string, coverImage: string }),
+            ...(matterResult.data as { createdDate: string, modifiedDate: string, title: string, coverImage: string }),
         }
     })
     // Sort posts by date
-    return allPostsData.sort((a, b) => a.date < b.date ? 1 : -1)
+    return allPostsData.sort((a, b) => a.createdDate < b.createdDate ? 1 : -1)
 }
 
 export function getAllPostIds() {
@@ -61,6 +61,6 @@ export async function getPostData(id) {
     return {
         id,
         contentHtml,
-        ...(matterResult.data as { date: string; title: string })
+        ...(matterResult.data as { createdDate: string, modifiedDate: string, title: string })
     }
 }

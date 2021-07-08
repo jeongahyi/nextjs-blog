@@ -10,7 +10,7 @@ import { SITE_TITLE } from '../lib/constants'
 
 export default function Home({ allPostsData }: {
   allPostsData: {
-    date: string
+    createdDate: string
     title: string
     coverImage: string
     id: string
@@ -30,7 +30,7 @@ export default function Home({ allPostsData }: {
           <HeroPost 
             title={heroPost.title}
             coverImage={heroPost.coverImage}
-            date={heroPost.date}
+            date={heroPost.createdDate}
             id={heroPost.id}
             excerpt={heroPost.excerpt}
           />
