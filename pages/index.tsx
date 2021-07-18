@@ -26,16 +26,18 @@ export default function Home({ allPostsData }: {
       </Head>
       <Container>
         <Intro />
-        {heroPost && (
-          <HeroPost 
-            title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.createdDate}
-            id={heroPost.id}
-            excerpt={heroPost.excerpt}
-          />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <div className="m-0.1 pt-20 p-10 shadow-md bg-white">
+          {heroPost && (
+            <HeroPost
+              title={heroPost.title}
+              coverImage={heroPost.coverImage}
+              date={heroPost.createdDate}
+              id={heroPost.id}
+              excerpt={heroPost.excerpt}
+            />
+          )}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        </div>
       </Container>
     </Layout>
   )

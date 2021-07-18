@@ -1,5 +1,5 @@
 export const NAME = 'Jeongah Y.'
 export const SITE_TITLE = 'Blog.jay'
 export const INTRO = 'Everyone has their own path.'
-export const INTRO_2 = 'I will just do me. you do you.'
+export const INTRO_2 = 'I will do me. you do you.'
 export const GITHUB_PATH = 'https://github.com/jeongahyi'
