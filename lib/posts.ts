@@ -38,7 +38,7 @@ export function getAllPostIds() {
   return fileNames.map(fileName => {
     return {
       params: {
-        d: fileName.replace(/\.md$/, '')
+        id: fileName.replace(/\.md$/, '')
      }
     }
   })
