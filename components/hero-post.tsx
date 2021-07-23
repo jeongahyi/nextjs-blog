@@ -17,18 +17,18 @@ export default function HeroPost({
 }) {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
+      <div className="mb-5 md:mb-10">
         <CoverImage
           title={title}
           src={coverImage}
           id={id}
-          height={620}
+          height={820}
           width={1240}
         />
       </div>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
+      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mx-5 md:mx-0 mb-20 md:mb-28">
         <div>
-          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
+          <h3 className="mb-4 text-3xl lg:text-5xl leading-tight">
             <Link as={`/posts/${id}`} href="/posts/[slug]">
               <a className="hover:underline">{title}</a>
             </Link>

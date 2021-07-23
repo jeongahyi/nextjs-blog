@@ -18,7 +18,7 @@ export default function Home({ allPostsData }: {
   }[]
 }) {
   const heroPost = allPostsData[0]
-  const morePosts = allPostsData
+  const morePosts = allPostsData.slice(1, allPostsData.length)
   return (
     <Layout>
       <Head>
@@ -26,7 +26,7 @@ export default function Home({ allPostsData }: {
       </Head>
       <Container>
         <Intro />
-        <div className="m-0.1 pt-20 p-10 shadow-md bg-white">
+        <div className="m-0.1 md:pt-10 md:p-10 shadow-md bg-white">
           {heroPost && (
             <HeroPost
               title={heroPost.title}
