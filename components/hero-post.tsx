@@ -9,12 +9,12 @@ export default function HeroPost({
   excerpt,
   id,
 }: {  
-  title: String,
+  title: string,
   coverImage: string,
   date: string,
   excerpt: string,
   id: string
-}) {
+}): JSX.Element | null {
   return (
     <section>
       <div className="mb-5 md:mb-10">

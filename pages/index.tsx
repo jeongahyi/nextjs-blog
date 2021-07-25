@@ -16,7 +16,7 @@ export default function Home({ allPostsData }: {
     id: string
     excerpt: string
   }[]
-}) {
+}): JSX.Element | null {
   const heroPost = allPostsData[0]
   const morePosts = allPostsData.slice(1, allPostsData.length)
   return (

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { NAME, SITE_TITLE } from '../lib/constants'
 
-export default function Header() {
+export default function Header(): JSX.Element | null {
   return (
     <header className="p-2 flex bg-white sm:bg-gray-100 place-items-center">
       <Image

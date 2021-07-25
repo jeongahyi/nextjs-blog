@@ -1,6 +1,14 @@
 import PostPreview from './post-preview'
 
-export default function MoreStories({ posts }) {
+export default function MoreStories({ posts }: {
+  posts: {
+    createdDate: string,
+    title: string,
+    coverImage: string,
+    id: string,
+    excerpt: string
+  }[]
+}): JSX.Element | null {
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 pb-20 md:gap-y-32 mb-22">

@@ -4,12 +4,18 @@ import CoverImage from './cover-image'
 import Link from 'next/link'
 
 export default function PostPreview({
+  id,
   title,
   coverImage,
   date,
-  excerpt,
-  id,
-}) {
+  excerpt
+}: {
+  id: string
+  title: string,
+  coverImage: string,
+  date: string,
+  excerpt: string,
+}): JSX.Element | null {
   return (
     <div>
       <div className="mb-5">
@@ -17,7 +23,7 @@ export default function PostPreview({
           id={id}
           title={title}
           src={coverImage}
-          height={278}
+          height={328}
           width={556}
         />
       </div>

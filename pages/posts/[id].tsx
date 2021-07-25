@@ -7,34 +7,34 @@ import PostHeader from '../../components/post-header'
 import PostBody from '../../components/post-body'
 
 export default function Post({ postData }: {
-    postData: {
-        title: string
-        coverImage: string
-        id: string
-        createdDate: string
-        author: string
-        contentHtml: string
-    }
-}) {
-    return (
-        <Layout>
-            <Container>
-                <article className="mb-32">
-                    <Head>
-                        <title>{postData.title}</title>
-                    </Head>
-                    <PostHeader
-                        title={postData.title}
-                        coverImage={postData.coverImage}
-                        id={postData.id}
-                        date={postData.createdDate}
-                        author={postData.author}
-                    />
-                    <PostBody content={postData.contentHtml} />
-                </article>
-            </Container>
-        </Layout>
-    )
+  postData: {
+    title: string
+    coverImage: string
+    id: string
+    createdDate: string
+    author: string
+    contentHtml: string
+  }
+}): JSX.Element | null {
+  return (
+    <Layout>
+      <Container>
+        <article className="mb-32">
+          <Head>
+            <title>{postData.title}</title>
+          </Head>
+          <PostHeader
+            title={postData.title}
+            coverImage={postData.coverImage}
+            id={postData.id}
+            date={postData.createdDate}
+            author={postData.author}
+          />
+          <PostBody content={postData.contentHtml} />
+        </article>
+      </Container>
+    </Layout>
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
